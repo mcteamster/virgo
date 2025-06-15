@@ -3,20 +3,27 @@ import timezoneCentroids from '../lib/timezone_centroids.json';
 import { Coordinates } from './types';
 
 export class Virgo {
-  protected static readonly timezoneCentroids = timezoneCentroids;
+  protected static readonly timezoneCentroids: Record<string, Coordinates> = timezoneCentroids;
 
   protected static toRadians(degrees: number): number {
     return degrees * (Math.PI / 180);
   }
 
-  public static getLocation(timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone): Coordinates {
-    return this.timezoneCentroids[timeZone] || { latitude: Infinity, longitude: Infinity };
+  public static getLocation(timeZone?: string): Coordinates {
+    const defaultTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const selectedTimeZone = timeZone || defaultTimeZone;
+
+    if (!this.timezoneCentroids[selectedTimeZone]) {
+      throw new Error(`Time zone '${selectedTimeZone}' is not supported.`);
+    }
+
+    return this.timezoneCentroids[selectedTimeZone];
   }
 
   public static getDistances(destinations: Coordinates[], origin = this.getLocation()): number[] {
-    // Calculate distance between two points using the Haversine formula
     const radius = 6371; // Radius of the earth in km
     const distances: number[] = [];
+
     for (const destination of destinations) {
       const deltaLat = this.toRadians(destination.latitude - origin.latitude);
       const deltaLon = this.toRadians(destination.longitude - origin.longitude);
@@ -28,6 +35,7 @@ export class Virgo {
       const arc = 2 * Math.atan2(Math.sqrt(distanceFactor), Math.sqrt(1 - distanceFactor));
       distances.push(radius * arc);
     }
+
     return distances;
   }
 }

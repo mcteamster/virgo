@@ -1,9 +1,11 @@
 {
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "src/**/*.d.ts"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": false
   }
 }

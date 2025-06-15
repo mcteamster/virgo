@@ -13,12 +13,15 @@ var Virgo = /** @class */ (function () {
         return degrees * (Math.PI / 180);
     };
     Virgo.getLocation = function (timeZone) {
-        if (timeZone === void 0) { timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; }
-        return this.timezoneCentroids[timeZone] || { latitude: Infinity, longitude: Infinity };
+        var defaultTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        var selectedTimeZone = timeZone || defaultTimeZone;
+        if (!this.timezoneCentroids[selectedTimeZone]) {
+            throw new Error("Time zone '".concat(selectedTimeZone, "' is not supported."));
+        }
+        return this.timezoneCentroids[selectedTimeZone];
     };
     Virgo.getDistances = function (destinations, origin) {
         if (origin === void 0) { origin = this.getLocation(); }
-        // Calculate distance between two points using the Haversine formula
         var radius = 6371; // Radius of the earth in km
         var distances = [];
         for (var _i = 0, destinations_1 = destinations; _i < destinations_1.length; _i++) {

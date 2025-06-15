@@ -19,7 +19,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Virgo2AWS = void 0;
-// Virgo, a browser JS library that approximates user location (and distance) based on timezone.
 var virgo_1 = require("./virgo");
 var aws_coordinates_json_1 = __importDefault(require("../lib/aws_coordinates.json"));
 var Virgo2AWS = /** @class */ (function (_super) {
@@ -29,17 +28,19 @@ var Virgo2AWS = /** @class */ (function (_super) {
     }
     Virgo2AWS.getClosestRegion = function (options) {
         var _this = this;
-        var origin = (options === null || options === void 0 ? void 0 : options.origin) || this.getLocation(); // Default to user's location if not provided
-        var regions = (options === null || options === void 0 ? void 0 : options.regions) || this.awsDefaultRegions; // Use the default list of activated AWS regions if not provided
+        var origin = (options === null || options === void 0 ? void 0 : options.origin) || this.getLocation();
+        var regions = (options === null || options === void 0 ? void 0 : options.regions) || this.awsDefaultRegions;
         var regionCoordinates = regions.map(function (region) {
-            return _this.awsCoordinates.find(function (awsRegion) { return awsRegion.region === region; }).coordinates;
+            var awsRegion = _this.awsCoordinates.find(function (awsRegion) { return awsRegion.region === region; });
+            if (!awsRegion)
+                throw new Error("AWS region '".concat(region, "' not found"));
+            return awsRegion.coordinates;
         });
         var distances = this.getDistances(regionCoordinates, origin);
-        var minDistance = Math.min.apply(Math, distances);
-        var minDistanceIndex = distances.indexOf(minDistance);
+        var minDistanceIndex = distances.indexOf(Math.min.apply(Math, distances));
         return {
             closestRegion: regions[minDistanceIndex],
-            distance: minDistance,
+            distance: distances[minDistanceIndex]
         };
     };
     Virgo2AWS.awsCoordinates = aws_coordinates_json_1.default;
@@ -58,7 +59,7 @@ var Virgo2AWS = /** @class */ (function (_super) {
         "us-east-1",
         "us-east-2",
         "us-west-1",
-        "us-west-2",
+        "us-west-2"
     ];
     return Virgo2AWS;
 }(virgo_1.Virgo));
