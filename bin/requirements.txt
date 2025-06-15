@@ -1,0 +1,5 @@
+cffi==1.17.1
+h3==4.2.2
+numpy==2.3.0
+pycparser==2.22
+timezonefinder==6.5.9

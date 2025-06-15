@@ -1,0 +1,20 @@
+{
+  "name": "virgo",
+  "version": "1.0.0",
+  "description": "A browser library for approximating user location (and distance) based on timezone",
+  "main": "dist/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "test": "jest"
+  },
+  "author": "mcteamster",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

@@ -1,0 +1,40 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Virgo = void 0;
+// Virgo, a browser JS library that approximates user location (and distance) based on timezone.
+var timezone_centroids_json_1 = __importDefault(require("../lib/timezone_centroids.json"));
+var Virgo = /** @class */ (function () {
+    function Virgo() {
+    }
+    Virgo.toRadians = function (degrees) {
+        return degrees * (Math.PI / 180);
+    };
+    Virgo.getLocation = function (timeZone) {
+        if (timeZone === void 0) { timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; }
+        return this.timezoneCentroids[timeZone] || { latitude: Infinity, longitude: Infinity };
+    };
+    Virgo.getDistances = function (destinations, origin) {
+        if (origin === void 0) { origin = this.getLocation(); }
+        // Calculate distance between two points using the Haversine formula
+        var radius = 6371; // Radius of the earth in km
+        var distances = [];
+        for (var _i = 0, destinations_1 = destinations; _i < destinations_1.length; _i++) {
+            var destination = destinations_1[_i];
+            var deltaLat = this.toRadians(destination.latitude - origin.latitude);
+            var deltaLon = this.toRadians(destination.longitude - origin.longitude);
+            var distanceFactor = Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+                Math.cos(this.toRadians(origin.latitude)) *
+                    Math.cos(this.toRadians(destination.latitude)) *
+                    Math.sin(deltaLon / 2) * Math.sin(deltaLon / 2);
+            var arc = 2 * Math.atan2(Math.sqrt(distanceFactor), Math.sqrt(1 - distanceFactor));
+            distances.push(radius * arc);
+        }
+        return distances;
+    };
+    Virgo.timezoneCentroids = timezone_centroids_json_1.default;
+    return Virgo;
+}());
+exports.Virgo = Virgo;

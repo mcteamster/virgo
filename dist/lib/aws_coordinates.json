@@ -1,0 +1,107 @@
+[
+    {
+        "region": "us-east-1",
+        "coordinates": {
+            "latitude": 38.0339,
+            "longitude": -78.4860
+        }
+    },
+    {
+        "region": "us-east-2",
+        "coordinates": {
+            "latitude": 40.4167,
+            "longitude": -82.9167
+        }
+    },
+    {
+        "region": "us-west-1",
+        "coordinates": {
+            "latitude": 37.7749,
+            "longitude": -122.4194
+        }
+    },
+    {
+        "region": "us-west-2",
+        "coordinates": {
+            "latitude": 45.5200,
+            "longitude": -122.6819
+        }
+    },
+    {
+        "region": "ca-central-1",
+        "coordinates": {
+            "latitude": 43.6532,
+            "longitude": -79.3832
+        }
+    },
+    {
+        "region": "ap-south-1",
+        "coordinates": {
+            "latitude": 19.0760,
+            "longitude": 72.8777
+        }
+    },
+    {
+        "region": "ap-northeast-2",
+        "coordinates": {
+            "latitude": 37.5665,
+            "longitude": 126.9780
+        }
+    },
+    {
+        "region": "ap-southeast-1",
+        "coordinates": {
+            "latitude": 1.3521,
+            "longitude": 103.8198
+        }
+    },
+    {
+        "region": "ap-southeast-2",
+        "coordinates": {
+            "latitude": -33.8688,
+            "longitude": 151.2093
+        }
+    },
+    {
+        "region": "ap-northeast-1",
+        "coordinates": {
+            "latitude": 35.6895,
+            "longitude": 139.6917
+        }
+    },
+    {
+        "region": "eu-central-1",
+        "coordinates": {
+            "latitude": 50.1147,
+            "longitude": 8.6821
+        }
+    },
+    {
+        "region": "eu-west-1",
+        "coordinates": {
+            "latitude": 53.4129,
+            "longitude": -8.2439
+        }
+    },
+    {
+        "region": "eu-west-2",
+        "coordinates": {
+            "latitude": 51.5074,
+            "longitude": -0.1278
+        }
+    },
+    {
+        "region": "eu-west-3",
+        "coordinates": {
+            "latitude": 48.8566,
+            "longitude": 2.3522
+        }
+    },
+    {
+        "region": "sa-east-1",
+        "coordinates": {
+            "latitude": -23.5505,
+            "longitude": -46.6333
+        }
+    }
+]
