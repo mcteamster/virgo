@@ -1,6 +1,6 @@
 {
   "name": "virgo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A browser library for approximating user location (and distance) based on timezone",
   "main": "dist/src/index.js",
   "scripts": {
