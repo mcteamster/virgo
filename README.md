@@ -59,7 +59,8 @@ const virgoOptions = {
   origin: Virgo.getLocation('Europe/London'),
 }
 
-Virgo2AWS.getClosestRegion(virgoOptions); 
+Virgo2AWS.getClosestRegion(virgoOptions);
+
 // { closestRegion: 'xx-xxxxxx-x', distance: number }
 ```
 
