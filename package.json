@@ -1,12 +1,14 @@
 {
   "name": "virgo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A browser library for approximating user location (and distance) based on timezone",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
-    "start": "node dist/src/index.js",
     "test": "jest"
   },
   "author": "mcteamster",
