@@ -14,7 +14,8 @@ export class Virgo {
     const selectedTimeZone = timeZone || defaultTimeZone;
 
     if (!this.timezoneCentroids[selectedTimeZone]) {
-      throw new Error(`Time zone '${selectedTimeZone}' is not supported.`);
+      console.error(`Time zone '${selectedTimeZone}' is not supported.`);
+      return { latitude: Infinity, longitude: Infinity }
     }
 
     return this.timezoneCentroids[selectedTimeZone];
