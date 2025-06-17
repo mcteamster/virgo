@@ -4,7 +4,7 @@ export declare class Virgo2AWS extends Virgo {
     protected static readonly awsCoordinates: AwsRegion[];
     static readonly awsDefaultRegions: string[];
     static getClosestRegion(options?: {
-        origin?: Coordinates;
+        origin?: (Coordinates | string);
         regions?: string[];
     }): {
         closestRegion: string;

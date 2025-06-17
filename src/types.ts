@@ -6,7 +6,7 @@ export interface Coordinates {
 
 export interface IVirgo {
   getLocation(timeZone?: string): Coordinates;
-  getDistances(destinations: Coordinates[], origin?: Coordinates): number[];
+  getDistances(params: { to: (Coordinates | string)[], from?: (Coordinates | string) }): number[];
 }
 
 // Virgo2AWS Class Types
@@ -18,7 +18,7 @@ export interface AwsRegion {
 export interface IVirgo2AWS extends IVirgo {
   awsCoordinates: AwsRegion[];
   awsDefaultRegions: string[];
-  getClosestRegion(options?: { origin?: Coordinates; regions?: string[] }): {
+  getClosestRegion(params?: { origin?: (Coordinates | string); regions?: string[] }): {
     closestRegion: string;
     distance: number;
   };

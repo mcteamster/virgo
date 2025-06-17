@@ -11,55 +11,68 @@ npm install https://github.com/mcteamster/virgo.git
 ```
 
 ## Usage
-### Basic Usage
 ```
 import { Virgo } from 'virgo';
-
-Virgo.getLocation();
-
-// { latitude: number, longitude: number } of your current TZ
 ```
 
-### More Features
-Specify a Location as an IANA timezone (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+### `Virgo.getLocation()`
+Defaults to the browser timeZone detected by `Intl.DateTimeFormat().resolvedOptions().timeZone`
+```
+Virgo.getLocation()
+
+// { latitude: number, longitude: number }
+```
+
+### `Virgo.getLocation(timeZone: string)`
+`timeZone` as a supported IANA timezone string https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
 ```
 Virgo.getLocation('Asia/Tokyo');
 
-// { latitude: 36.01, longitude: 136.51 } - the approx centre of Japan
+// { latitude: 36.01, longitude: 136.51 } - the approximate centre of Japan
 ```
 
-Get the distances between Locations, use Virgo to supply a timezone centroid, or supply exact coordinates
-```
-Virgo.getDistances(
-  [ Virgo.getLocation('Europe/London'), { latitude: 36.01, longitude: 136.51 } ],
-  Virgo.getLocation('America/New_York'),
-);
+### `Virgo.getDistances(params)`
+Get the distances between Locations. Supply locations as IANA timezones or exact coordinates. `params`:
 
-// [11061.69631808281, 5815.825206094131] - the distance between the centroids in KM
-```
-
-### Advanced
-`Virgo` can be extended to add functionality for specific use-cases. Currently there is one bundled extension `Virgo2AWS` for finding the closest AWS region to a given location. This helps to implement client load-balancing and reduces latency for users without the need for full geolocation features.
+- `to`: A list of destinations
+- `from`: (optional) a start locaction, defaults to detected browser timezone
 
 ```
-import { Virgo2AWS, Virgo } from 'virgo';
+const virgoParams = {
+  to: [ 'Europe/London', { latitude: 36.01, longitude: 136.51 } ],
+  from: 'America/New_York',
+}
+
+Virgo.getDistances(virgoParams);
+
+// [5815.825206094131, 11061.69631808281, ] - the distance between the centroids in KM
+```
+
+## Extensions
+`Virgo` can be extended to add functionality for specific use-cases. There is one bundled extension `Virgo2AWS` for finding the closest AWS region to a given location. This helps to implement client-side load-balancing to backend AWS services without the need to make network pings or request GPS data.
+
+```
+import { Virgo2AWS } from 'virgo';
 
 Virgo2AWS.getClosestRegion();
 
 // { closestRegion: 'xx-xxxxxx-x', distance: number }
 ```
 
-Provide a list of enabled AWS Regions and/or an origin location. If not supplied:
-- `regions` will be the 15 AWS regions enabled by default
-- `origin` will be the current timezone of the user
+### `Virgo2AWS.getClosestRegion(params)`
+
+Provide a list of enabled AWS Regions and/or an origin location as `params`:
+- `regions` (optional) A list of enabled AWS regions - defaults to the 15 enabled regions in every account
+- `origin` (optional) A location as coordinates or an IANA timezone - defaults to the detected browser timezone
 
 ```
-const virgoOptions = {
+const virgo2AWSParams = {
   regions: ['us-east-1', 'eu-central-1', 'ap-southeast-1'],
   origin: Virgo.getLocation('Europe/London'),
 }
 
-Virgo2AWS.getClosestRegion(virgoOptions);
+Virgo2AWS.getClosestRegion(virgo2AWSParams);
 
 // { closestRegion: 'xx-xxxxxx-x', distance: number }
 ```
@@ -80,3 +93,5 @@ It's designed to work in the browser, but can also be used on Node.js although y
 `Virgo` was born out of a need to quickly connect multiplayer game clients to a suitable nearby server. The goal is to reduce both the initial and ongoing connection delay to improve the gameplay experience.
 
 There are many other libraries that do the *opposite* of what `Virgo` does: provide the timezone based on coordinates. `Virgo` works by reversing this process by sampling https://pypi.org/project/timezonefinder/ and calculating centroids from the sampled points.
+
+For backwards compatibility the list of `backward` IANA timezone mappings is computed and included for clients that may not be returning the most up-to-date timezone information.

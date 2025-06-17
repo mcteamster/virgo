@@ -1,5 +1,6 @@
 // Virgo, a browser JS library that approximates user location (and distance) based on timezone.
 import timezoneCentroids from '../lib/timezone_centroids.json';
+import timezoneLinks from '../lib/timezone_links.json';
 import { Coordinates } from './types';
 
 export class Virgo {
@@ -13,19 +14,34 @@ export class Virgo {
     const defaultTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const selectedTimeZone = timeZone || defaultTimeZone;
 
-    if (!this.timezoneCentroids[selectedTimeZone]) {
-      console.error(`Time zone '${selectedTimeZone}' is not supported.`);
+    if (Object.keys(timezoneCentroids).includes(selectedTimeZone)) {
+      return this.timezoneCentroids[selectedTimeZone];
+    } else if (Object.keys(timezoneLinks).includes(selectedTimeZone)) {
+      console.info(`Time zone '${selectedTimeZone}' links to ${timezoneLinks[selectedTimeZone]}`);
+      return this.timezoneCentroids[timezoneLinks[selectedTimeZone]];
+    } else {
+      console.warn(`Time zone '${selectedTimeZone}' is not supported. Location not found.`);
       return { latitude: Infinity, longitude: Infinity }
     }
-
-    return this.timezoneCentroids[selectedTimeZone];
   }
 
-  public static getDistances(destinations: Coordinates[], origin = this.getLocation()): number[] {
+  public static getDistances(params: { to: (Coordinates | string)[], from?: (Coordinates | string) }): number[] {
     const radius = 6371; // Radius of the earth in km
     const distances: number[] = [];
 
-    for (const destination of destinations) {
+    let origin: Coordinates;
+    if (!params?.from) {
+      origin = this.getLocation(); // Default to callers location when undefined
+    } else if (typeof params.from === "string" ) {
+      origin = this.getLocation(params.from); // Lookup timezone string
+    } else {
+      origin = params.from // Accept the coordinates
+    }
+
+    for (let destination of params.to) {
+      if (typeof destination === "string" ) {
+        destination = this.getLocation(destination) // Lookup timezone string
+      }
       const deltaLat = this.toRadians(destination.latitude - origin.latitude);
       const deltaLon = this.toRadians(destination.longitude - origin.longitude);
       const distanceFactor =

@@ -22,8 +22,16 @@ export class Virgo2AWS extends Virgo {
     "us-west-2"
   ];
 
-  public static getClosestRegion(options?: { origin?: Coordinates; regions?: string[] }) {
-    const origin = options?.origin || this.getLocation();
+  public static getClosestRegion(options?: { origin?: (Coordinates | string); regions?: string[] }) {
+    let origin: Coordinates
+    if (!options?.origin) {
+      origin = this.getLocation(); // Default to callers location when undefined
+    } else if (typeof options.origin === "string" ) {
+      origin = this.getLocation(options.origin); // Lookup timezone string
+    } else {
+      origin = options.origin // Accept the coordinates
+    }
+    
     const regions = options?.regions || this.awsDefaultRegions;
     const regionCoordinates: Coordinates[] = regions.map((region) => {
       const awsRegion = this.awsCoordinates.find(
@@ -33,7 +41,7 @@ export class Virgo2AWS extends Virgo {
       return awsRegion.coordinates;
     });
 
-    const distances: number[] = this.getDistances(regionCoordinates, origin);
+    const distances: number[] = this.getDistances({ to: regionCoordinates, from: origin });
     const minDistanceIndex: number = distances.indexOf(Math.min(...distances));
 
     return {

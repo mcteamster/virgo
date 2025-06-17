@@ -16,8 +16,15 @@ describe('Virgo', () => {
   });
 
   it('should return the correct distances between Asia/Tokyo & Europe/London to America/New_York', () => {
-    const distances = Virgo.getDistances([Virgo.getLocation('Asia/Tokyo'), Virgo.getLocation('Europe/London')], Virgo.getLocation('America/New_York'))
+    const options = {
+      to: [
+        'Europe/London',
+        { latitude: 36.01, longitude: 136.51 }, // Asia/Tokyo
+      ],
+      from: 'America/New_York',
+    }
+    const distances = Virgo.getDistances(options)
     console.log(distances)
-    expect(distances).toEqual([11061.69631808281, 5815.825206094131]);
+    expect(distances).toEqual([5815.825206094131, 11061.69631808281]);
   });
 });

@@ -30,3 +30,8 @@ This script calculates the centroid of each timezone by averaging the cartesion 
 ```
 python3 calculate_centroids.py
 ```
+
+### Populate Backlinks
+Download the latest IANA timezone database data from https://www.iana.org/time-zones and extract the `backward` file into `bin`
+
+Run the `generate_backlinks` script to populate the backlink map so that non-canonical timezones continue to be supported.

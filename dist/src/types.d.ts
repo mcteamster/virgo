@@ -4,7 +4,10 @@ export interface Coordinates {
 }
 export interface IVirgo {
     getLocation(timeZone?: string): Coordinates;
-    getDistances(destinations: Coordinates[], origin?: Coordinates): number[];
+    getDistances(params: {
+        to: (Coordinates | string)[];
+        from?: (Coordinates | string);
+    }): number[];
 }
 export interface AwsRegion {
     region: string;
@@ -13,8 +16,8 @@ export interface AwsRegion {
 export interface IVirgo2AWS extends IVirgo {
     awsCoordinates: AwsRegion[];
     awsDefaultRegions: string[];
-    getClosestRegion(options?: {
-        origin?: Coordinates;
+    getClosestRegion(params?: {
+        origin?: (Coordinates | string);
         regions?: string[];
     }): {
         closestRegion: string;

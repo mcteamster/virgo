@@ -28,7 +28,16 @@ var Virgo2AWS = /** @class */ (function (_super) {
     }
     Virgo2AWS.getClosestRegion = function (options) {
         var _this = this;
-        var origin = (options === null || options === void 0 ? void 0 : options.origin) || this.getLocation();
+        var origin;
+        if (!(options === null || options === void 0 ? void 0 : options.origin)) {
+            origin = this.getLocation(); // Default to callers location when undefined
+        }
+        else if (typeof options.origin === "string") {
+            origin = this.getLocation(options.origin); // Lookup timezone string
+        }
+        else {
+            origin = options.origin; // Accept the coordinates
+        }
         var regions = (options === null || options === void 0 ? void 0 : options.regions) || this.awsDefaultRegions;
         var regionCoordinates = regions.map(function (region) {
             var awsRegion = _this.awsCoordinates.find(function (awsRegion) { return awsRegion.region === region; });
@@ -36,7 +45,7 @@ var Virgo2AWS = /** @class */ (function (_super) {
                 throw new Error("AWS region '".concat(region, "' not found"));
             return awsRegion.coordinates;
         });
-        var distances = this.getDistances(regionCoordinates, origin);
+        var distances = this.getDistances({ to: regionCoordinates, from: origin });
         var minDistanceIndex = distances.indexOf(Math.min.apply(Math, distances));
         return {
             closestRegion: regions[minDistanceIndex],
