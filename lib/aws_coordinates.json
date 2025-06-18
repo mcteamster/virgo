@@ -1,107 +1,233 @@
 [
   {
-    "region": "us-east-1",
+    "region": "af-south-1",
     "coordinates": {
-      "latitude": 38.0339,
-      "longitude": -78.4860
+      "latitude": -33.92,
+      "longitude": 18.00
     }
   },
   {
-    "region": "us-east-2",
+    "region": "ap-east-1",
     "coordinates": {
-      "latitude": 40.4167,
-      "longitude": -82.9167
+      "latitude": 22.35,
+      "longitude": 113.97
     }
   },
   {
-    "region": "us-west-1",
+    "region": "ap-east-2",
     "coordinates": {
-      "latitude": 37.7749,
-      "longitude": -122.4194
-    }
-  },
-  {
-    "region": "us-west-2",
-    "coordinates": {
-      "latitude": 45.5200,
-      "longitude": -122.6819
-    }
-  },
-  {
-    "region": "ca-central-1",
-    "coordinates": {
-      "latitude": 43.6532,
-      "longitude": -79.3832
-    }
-  },
-  {
-    "region": "ap-south-1",
-    "coordinates": {
-      "latitude": 19.0760,
-      "longitude": 72.8777
-    }
-  },
-  {
-    "region": "ap-northeast-2",
-    "coordinates": {
-      "latitude": 37.5665,
-      "longitude": 126.9780
-    }
-  },
-  {
-    "region": "ap-southeast-1",
-    "coordinates": {
-      "latitude": 1.3521,
-      "longitude": 103.8198
-    }
-  },
-  {
-    "region": "ap-southeast-2",
-    "coordinates": {
-      "latitude": -33.8688,
-      "longitude": 151.2093
+      "latitude": 25.09,
+      "longitude": 121.48
     }
   },
   {
     "region": "ap-northeast-1",
     "coordinates": {
-      "latitude": 35.6895,
-      "longitude": 139.6917
+      "latitude": 35.50,
+      "longitude": 138.45
+    }
+  },
+  {
+    "region": "ap-northeast-2",
+    "coordinates": {
+      "latitude": 37.57,
+      "longitude": 126.81
+    }
+  },
+  {
+    "region": "ap-northeast-3",
+    "coordinates": {
+      "latitude": 34.68,
+      "longitude": 135.40
+    }
+  },
+  {
+    "region": "ap-south-1",
+    "coordinates": {
+      "latitude": 19.08,
+      "longitude": 72.80
+    }
+  },
+  {
+    "region": "ap-south-2",
+    "coordinates": {
+      "latitude": 17.41,
+      "longitude": 78.24
+    }
+  },
+  {
+    "region": "ap-southeast-1",
+    "coordinates": {
+      "latitude": 1.31,
+      "longitude": 103.68
+    }
+  },
+  {
+    "region": "ap-southeast-2",
+    "coordinates": {
+      "latitude": -33.85,
+      "longitude": 150.60
+    }
+  },
+  {
+    "region": "ap-southeast-3",
+    "coordinates": {
+      "latitude": -6.23,
+      "longitude": 106.75
+    }
+  },
+  {
+    "region": "ap-southeast-4",
+    "coordinates": {
+      "latitude": -37.97,
+      "longitude": 144.72
+    }
+  },
+  {
+    "region": "ap-southeast-5",
+    "coordinates": {
+      "latitude": 3.14,
+      "longitude": 101.53
+    }
+  },
+  {
+    "region": "ap-southeast-7",
+    "coordinates": {
+      "latitude": 13.72,
+      "longitude": 100.47
+    }
+  },
+  {
+    "region": "ca-central-1",
+    "coordinates": {
+      "latitude": 46.86,
+      "longitude": -71.51
+    }
+  },
+  {
+    "region": "ca-west-1",
+    "coordinates": {
+      "latitude": 51.03,
+      "longitude": -114.25
     }
   },
   {
     "region": "eu-central-1",
     "coordinates": {
-      "latitude": 50.1147,
-      "longitude": 8.6821
+      "latitude": 50.12,
+      "longitude": 8.55
+    }
+  },
+  {
+    "region": "eu-central-2",
+    "coordinates": {
+      "latitude": 47.38,
+      "longitude": 8.38
+    }
+  },
+  {
+    "region": "eu-north-1",
+    "coordinates": {
+      "latitude": 59.30,
+      "longitude": 18.00
+    }
+  },
+  {
+    "region": "eu-south-1",
+    "coordinates": {
+      "latitude": 45.46,
+      "longitude": 9.10
+    }
+  },
+  {
+    "region": "eu-south-2",
+    "coordinates": {
+      "latitude": 41.50,
+      "longitude": -1.61
     }
   },
   {
     "region": "eu-west-1",
     "coordinates": {
-      "latitude": 53.4129,
-      "longitude": -8.2439
+      "latitude": 53.32,
+      "longitude": -6.41
     }
   },
   {
     "region": "eu-west-2",
     "coordinates": {
-      "latitude": 51.5074,
-      "longitude": -0.1278
+      "latitude": 51.53,
+      "longitude": -0.27
     }
   },
   {
     "region": "eu-west-3",
     "coordinates": {
-      "latitude": 48.8566,
-      "longitude": 2.3522
+      "latitude": 48.86,
+      "longitude": 2.26
+    }
+  },
+  {
+    "region": "il-central-1",
+    "coordinates": {
+      "latitude": 32.09,
+      "longitude": 34.76
+    }
+  },
+  {
+    "region": "me-central-1",
+    "coordinates": {
+      "latitude": 24.39,
+      "longitude": 54.39
+    }
+  },
+  {
+    "region": "me-south-1",
+    "coordinates": {
+      "latitude": 25.94,
+      "longitude": 49.96
+    }
+  },
+  {
+    "region": "mx-central-1",
+    "coordinates": {
+      "latitude": 19.39,
+      "longitude": -99.31
     }
   },
   {
     "region": "sa-east-1",
     "coordinates": {
-      "latitude": -23.5505,
-      "longitude": -46.6333
+      "latitude": -23.68,
+      "longitude": -46.76
+    }
+  },
+  {
+    "region": "us-east-1",
+    "coordinates": {
+      "latitude": 38.89,
+      "longitude": -77.10
+    }
+  },
+  {
+    "region": "us-east-2",
+    "coordinates": {
+      "latitude": 39.98,
+      "longitude": -83.16
+    }
+  },
+  {
+    "region": "us-west-1",
+    "coordinates": {
+      "latitude": 37.75,
+      "longitude": -122.59
+    }
+  },
+  {
+    "region": "us-west-2",
+    "coordinates": {
+      "latitude": 45.54,
+      "longitude": -122.97
     }
   }
 ]
