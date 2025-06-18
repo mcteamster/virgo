@@ -1,5 +1,5 @@
 {
-  "name": "virgo",
+  "name": "@mcteamster/virgo",
   "version": "0.2.1",
   "description": "A browser library for approximating user location (and distance) based on timezone",
   "main": "dist/src/index.js",
@@ -13,11 +13,18 @@
   },
   "author": "mcteamster",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcteamster/virgo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mcteamster/virgo/issues"
+  },
+  "homepage": "https://github.com/mcteamster/virgo#readme",
   "devDependencies": {
-    "@types/jest": "^29.5.14",
+    "@types/jest": "^30.0.0",
     "jest": "^30.0.0",
     "ts-jest": "^29.4.0",
-    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }
