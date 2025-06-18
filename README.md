@@ -4,8 +4,6 @@
 **A browser JS library for approximating user location (and distance) based on timezone**
 
 ## Installation
-For now you can install directly from GitHub
-
 ```
 npm install @mcteamster/virgo
 ```
