@@ -1,6 +1,6 @@
 {
   "name": "@mcteamster/virgo",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A browser library for approximating user location (and distance) based on timezone",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "npm publish --access public"
   },
   "author": "mcteamster",
   "license": "MIT",

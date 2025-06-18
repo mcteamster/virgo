@@ -7,12 +7,12 @@
 For now you can install directly from GitHub
 
 ```
-npm install https://github.com/mcteamster/virgo.git
+npm install @mcteamster/virgo
 ```
 
 ## Usage
 ```
-import { Virgo } from 'virgo';
+import { Virgo } from '@mcteamster/virgo';
 ```
 
 ### `Virgo.getLocation()`
@@ -53,7 +53,7 @@ Virgo.getDistances(virgoParams);
 `Virgo` can be extended to add functionality for specific use-cases. There is one bundled extension `Virgo2AWS` for finding the closest AWS region to a given location. This helps to implement client-side load-balancing to backend AWS services without the need to make network pings or request GPS data.
 
 ```
-import { Virgo2AWS } from 'virgo';
+import { Virgo2AWS } from '@mcteamster/virgo';
 
 Virgo2AWS.getClosestRegion();
 
