@@ -72,7 +72,7 @@ const virgo2AWSParams = {
 
 Virgo2AWS.getClosestRegion(virgo2AWSParams);
 
-// { closestRegion: 'xx-xxxxxx-x', distance: number }
+// { closestRegion: 'eu-central-1', distance: 946.1045580392072 }
 ```
 
 ## Background
