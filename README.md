@@ -3,6 +3,8 @@
 
 **A browser JS library for approximating user location (and distance) based on timezone**
 
+![virgo](./docs/img/virgo.png)
+
 ## Installation
 ```
 npm install @mcteamster/virgo
