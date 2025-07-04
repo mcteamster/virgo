@@ -69,13 +69,15 @@ Provide a list of enabled AWS Regions and/or an origin location as `params`:
 ```
 const virgo2AWSParams = {
   regions: ['us-east-1', 'eu-central-1', 'ap-southeast-1'],
-  origin: Virgo.getLocation('Europe/London'),
+  origin: { latitude: 54.63, longitude: -3.3 }, // 'Europe/London'
 }
 
 Virgo2AWS.getClosestRegion(virgo2AWSParams);
 
 // { closestRegion: 'eu-central-1', distance: 946.1045580392072 }
 ```
+
+Note: the `origin` coordinates could be supplied from any source. For instance, if accuracy were important you could combine GPS location with `Virgo2AWS` (at the cost of latency and privacy).
 
 ## Background
 Virgo approximates a user's location by looking their timezone's precomputed centroid coordinate. This is a fast and synchronous guess that can be used to calculate distances to other locations. Reasons to use `Virgo` may include:
