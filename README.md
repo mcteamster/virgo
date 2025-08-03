@@ -12,7 +12,7 @@ npm install @mcteamster/virgo
 
 ## Usage
 ```
-import { Virgo } from '@mcteamster/virgo';
+import { Virgo } from '@mcteamster/virgo'
 ```
 
 ### `Virgo.getLocation()`
@@ -27,7 +27,7 @@ Virgo.getLocation()
 `timeZone` as a supported IANA timezone string https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 ```
-Virgo.getLocation('Asia/Tokyo');
+Virgo.getLocation('Asia/Tokyo')
 
 // { latitude: 36.01, longitude: 136.51 } - the approximate centre of Japan
 ```
@@ -35,16 +35,16 @@ Virgo.getLocation('Asia/Tokyo');
 ### `Virgo.getDistances(params)`
 Get the distances between Locations. Supply locations as IANA timezones or exact coordinates. `params`:
 
-- `to`: A list of destinations
 - `from`: (optional) a start locaction, defaults to detected browser timezone
+- `to`: A list of destinations
 
 ```
 const virgoParams = {
-  to: [ 'Europe/London', { latitude: 36.01, longitude: 136.51 } ],
   from: 'America/New_York',
+  to: [ 'Europe/London', { latitude: 36.01, longitude: 136.51 } ],
 }
 
-Virgo.getDistances(virgoParams);
+Virgo.getDistances(virgoParams)
 
 // [5815.825206094131, 11061.69631808281, ] - the distance between the centroids in KM
 ```
@@ -53,9 +53,9 @@ Virgo.getDistances(virgoParams);
 `Virgo` can be extended to add functionality for specific use-cases. There is one bundled extension `Virgo2AWS` for finding the closest AWS region to a given location. This helps to implement client-side load-balancing to backend AWS services without the need to make network pings or request GPS data.
 
 ```
-import { Virgo2AWS } from '@mcteamster/virgo';
+import { Virgo2AWS } from '@mcteamster/virgo'
 
-Virgo2AWS.getClosestRegion();
+Virgo2AWS.getClosestRegion()
 
 // { closestRegion: 'xx-xxxxxx-x', distance: number }
 ```
@@ -63,16 +63,16 @@ Virgo2AWS.getClosestRegion();
 ### `Virgo2AWS.getClosestRegion(params)`
 
 Provide a list of enabled AWS Regions and/or an origin location as `params`:
-- `regions` (optional) A list of enabled AWS regions - defaults to the 15 enabled regions in every account
 - `origin` (optional) A location as coordinates or an IANA timezone - defaults to the detected browser timezone
+- `regions` (optional) A list of enabled AWS regions - defaults to the 15 enabled regions in every account
 
 ```
 const virgo2AWSParams = {
-  regions: ['us-east-1', 'eu-central-1', 'ap-southeast-1'],
   origin: { latitude: 54.63, longitude: -3.3 }, // 'Europe/London'
+  regions: ['us-east-1', 'eu-central-1', 'ap-southeast-1'],
 }
 
-Virgo2AWS.getClosestRegion(virgo2AWSParams);
+Virgo2AWS.getClosestRegion(virgo2AWSParams)
 
 // { closestRegion: 'eu-central-1', distance: 946.1045580392072 }
 ```
