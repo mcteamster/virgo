@@ -84,7 +84,7 @@ Virgo approximates a user's location by looking their timezone's precomputed cen
 - *Privacy*: The user does not need to share their device GPS location or IP address to a third-party service.
 - *User Experience*: There is zero user interaction required for Virgo to work.
 - *Performance*: The library is lightweight and only has dependencies on native browser APIs.
-  - Just over ~100kb compared to libraries that use IP Location databases (at least few MB)
+  - Only ~100kb, compared to libraries that use IP Location databases which are at least few MB
 - *Latency*: No network requests are made, making it suitable for real-time applications where awaiting a round trip ping (or three) to servers in different regions would be too slow.
 
 Of course this relies the user having their device timezone set correctly; which is a fair assumption in 2025.
