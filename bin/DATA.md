@@ -16,7 +16,7 @@ pip3 install -r requirements.txt
 ### Sample Data
 Run the `sample_data` script. Change the precision to sample greater or fewer points. The output will update the `lib/timezone_points.json` file with new data points.
 
-The run time complexity of this script scales parabolically with the number of points sampled; O(n^2). The default precision of 10 points per degree is used if left blank.
+The run time complexity of this script scales parabolically with the number of points sampled; O(n^2). The default precision of 10 points per degree is used if left blank. The library data was calculated using a precision of 25 points per degree.
 
 ```
 python3 sample_data.py [precision]

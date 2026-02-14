@@ -32,6 +32,24 @@ Virgo.getLocation('Asia/Tokyo')
 // { latitude: 36.01, longitude: 136.51 } - the approximate centre of Japan
 ```
 
+### `Virgo.getLocationGeoJSON()`
+Returns location in GeoJSON Point format. Defaults to the browser timezone.
+
+```
+Virgo.getLocationGeoJSON()
+
+// { type: 'Point', coordinates: [longitude, latitude] }
+```
+
+### `Virgo.getLocationGeoJSON(timeZone: string)`
+Returns location in GeoJSON Point format for a specific timezone.
+
+```
+Virgo.getLocationGeoJSON('Asia/Tokyo')
+
+// { type: 'Point', coordinates: [136.51, 36.01] }
+```
+
 ### `Virgo.getDistances(params)`
 Get the distances between Locations. Supply locations as IANA timezones or exact coordinates. `params`:
 
@@ -98,3 +116,7 @@ It's designed to work in the browser, but can also be used on Node.js although y
 There are many other libraries that do the *opposite* of what `Virgo` does: provide the timezone based on coordinates. `Virgo` works by reversing this process by sampling https://pypi.org/project/timezonefinder/ and calculating centroids from the sampled points.
 
 For backwards compatibility the list of `backward` IANA timezone mappings is computed and included for clients that may not be returning the most up-to-date timezone information.
+
+## Data Sources
+- Timezone data: IANA Time Zone Database 2025c (released 2025-12-10)
+- Timezone centroids: Computed from timezonefinder 6.5.9

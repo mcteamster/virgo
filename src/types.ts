@@ -4,8 +4,14 @@ export interface Coordinates {
   longitude: number;
 }
 
+export interface GeoJSONPoint {
+  type: 'Point';
+  coordinates: [number, number];
+}
+
 export interface IVirgo {
   getLocation(timeZone?: string): Coordinates;
+  getLocationGeoJSON(timeZone?: string): GeoJSONPoint;
   getDistances(params: { to: (Coordinates | string)[], from?: (Coordinates | string) }): number[];
 }
 
