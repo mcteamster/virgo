@@ -1,7 +1,7 @@
 // Virgo, a browser JS library that approximates user location (and distance) based on timezone.
 import timezoneCentroids from '../lib/timezone_centroids.json';
 import timezoneLinks from '../lib/timezone_links.json';
-import { Coordinates } from './types';
+import { Coordinates, GeoJSONPoint } from './types';
 
 export class Virgo {
   protected static readonly timezoneCentroids: Record<string, Coordinates> = timezoneCentroids;
@@ -23,6 +23,14 @@ export class Virgo {
       console.warn(`Time zone '${selectedTimeZone}' is not supported. Location not found.`);
       return { latitude: Infinity, longitude: Infinity }
     }
+  }
+
+  public static getLocationGeoJSON(timeZone?: string): GeoJSONPoint {
+    const coords = this.getLocation(timeZone);
+    return {
+      type: 'Point',
+      coordinates: [coords.longitude, coords.latitude]
+    };
   }
 
   public static getDistances(params: { to: (Coordinates | string)[], from?: (Coordinates | string) }): number[] {

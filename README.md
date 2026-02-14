@@ -98,3 +98,7 @@ It's designed to work in the browser, but can also be used on Node.js although y
 There are many other libraries that do the *opposite* of what `Virgo` does: provide the timezone based on coordinates. `Virgo` works by reversing this process by sampling https://pypi.org/project/timezonefinder/ and calculating centroids from the sampled points.
 
 For backwards compatibility the list of `backward` IANA timezone mappings is computed and included for clients that may not be returning the most up-to-date timezone information.
+
+## Data Sources
+- Timezone data: IANA Time Zone Database 2025c (released 2025-12-10)
+- Timezone centroids: Computed from timezonefinder 6.5.9
