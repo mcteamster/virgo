@@ -32,6 +32,24 @@ Virgo.getLocation('Asia/Tokyo')
 // { latitude: 36.01, longitude: 136.51 } - the approximate centre of Japan
 ```
 
+### `Virgo.getLocationGeoJSON()`
+Returns location in GeoJSON Point format. Defaults to the browser timezone.
+
+```
+Virgo.getLocationGeoJSON()
+
+// { type: 'Point', coordinates: [longitude, latitude] }
+```
+
+### `Virgo.getLocationGeoJSON(timeZone: string)`
+Returns location in GeoJSON Point format for a specific timezone.
+
+```
+Virgo.getLocationGeoJSON('Asia/Tokyo')
+
+// { type: 'Point', coordinates: [136.51, 36.01] }
+```
+
 ### `Virgo.getDistances(params)`
 Get the distances between Locations. Supply locations as IANA timezones or exact coordinates. `params`:
 
