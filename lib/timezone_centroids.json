@@ -41,7 +41,7 @@
   },
   "Africa/Brazzaville": {
     "latitude": -0.87,
-    "longitude": 15.19
+    "longitude": 15.18
   },
   "Africa/Bujumbura": {
     "latitude": -3.37,
@@ -53,11 +53,11 @@
   },
   "Africa/Casablanca": {
     "latitude": 31.87,
-    "longitude": -6.48
+    "longitude": -6.49
   },
   "Africa/Ceuta": {
-    "latitude": 35.79,
-    "longitude": -4.56
+    "latitude": 35.76,
+    "longitude": -4.48
   },
   "Africa/Conakry": {
     "latitude": 10.42,
@@ -409,7 +409,7 @@
   },
   "America/Eirunepe": {
     "latitude": -6.52,
-    "longitude": -70.72
+    "longitude": -70.73
   },
   "America/El_Salvador": {
     "latitude": 13.62,
@@ -876,7 +876,7 @@
     "longitude": 47.92
   },
   "Asia/Bangkok": {
-    "latitude": 15.64,
+    "latitude": 15.63,
     "longitude": 101.92
   },
   "Asia/Barnaul": {
@@ -892,8 +892,8 @@
     "longitude": 74.51
   },
   "Asia/Brunei": {
-    "latitude": 4.9,
-    "longitude": 114.47
+    "latitude": 4.65,
+    "longitude": 114.69
   },
   "Asia/Chita": {
     "latitude": 52.79,
@@ -916,7 +916,7 @@
     "longitude": 125.96
   },
   "Asia/Dubai": {
-    "latitude": 24.19,
+    "latitude": 24.2,
     "longitude": 54.1
   },
   "Asia/Dushanbe": {
@@ -996,8 +996,8 @@
     "longitude": 101.96
   },
   "Asia/Kuching": {
-    "latitude": 4.07,
-    "longitude": 114.84
+    "latitude": 4.08,
+    "longitude": 114.85
   },
   "Asia/Kuwait": {
     "latitude": 29.3,
@@ -1016,8 +1016,8 @@
     "longitude": 120.34
   },
   "Asia/Manila": {
-    "latitude": 10.83,
-    "longitude": 121.94
+    "latitude": 10.85,
+    "longitude": 121.97
   },
   "Asia/Muscat": {
     "latitude": 20.61,
@@ -1048,7 +1048,7 @@
     "longitude": 104.73
   },
   "Asia/Pontianak": {
-    "latitude": -1.54,
+    "latitude": -1.53,
     "longitude": 111.76
   },
   "Asia/Pyongyang": {
@@ -1084,12 +1084,12 @@
     "longitude": 127.43
   },
   "Asia/Shanghai": {
-    "latitude": 34.88,
+    "latitude": 34.87,
     "longitude": 107.98
   },
   "Asia/Singapore": {
-    "latitude": 1.33,
-    "longitude": 103.94
+    "latitude": 1.32,
+    "longitude": 103.91
   },
   "Asia/Srednekolymsk": {
     "latitude": 67.54,
@@ -1112,8 +1112,8 @@
     "longitude": 54.35
   },
   "Asia/Thimphu": {
-    "latitude": 27.39,
-    "longitude": 90.42
+    "latitude": 27.4,
+    "longitude": 90.43
   },
   "Asia/Tokyo": {
     "latitude": 36.0,
@@ -1336,7 +1336,7 @@
     "longitude": 105.18
   },
   "Etc/GMT-8": {
-    "latitude": -3.49,
+    "latitude": -3.48,
     "longitude": 119.94
   },
   "Etc/GMT-9": {
@@ -1440,7 +1440,7 @@
     "longitude": -8.2
   },
   "Europe/Ljubljana": {
-    "latitude": 46.11,
+    "latitude": 46.12,
     "longitude": 14.81
   },
   "Europe/London": {

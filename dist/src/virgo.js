@@ -28,6 +28,13 @@ var Virgo = /** @class */ (function () {
             return { latitude: Infinity, longitude: Infinity };
         }
     };
+    Virgo.getLocationGeoJSON = function (timeZone) {
+        var coords = this.getLocation(timeZone);
+        return {
+            type: 'Point',
+            coordinates: [coords.longitude, coords.latitude]
+        };
+    };
     Virgo.getDistances = function (params) {
         var radius = 6371; // Radius of the earth in km
         var distances = [];
