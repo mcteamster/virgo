@@ -16,7 +16,7 @@ const styles = {
     gap: '2em',
     alignItems: 'center' as const,
     fontSize: 'min(1.5vh, 13px)',
-    padding: '2em 1em 1em',
+    padding: '2em 1em 10em',
     boxSizing: 'border-box' as const,
   },
 }
