@@ -3,7 +3,7 @@ const styles = {
   title: { fontSize: '2.5em' },
   paragraph: { fontSize: '1.25em', padding: '0.5em' },
   paragraphCentered: { fontSize: '1.25em', padding: '0.5em', textAlign: 'center' as const },
-  link: { color: 'black' },
+  link: { color: '#2C1A0E' },
 }
 
 export default function Header() {

@@ -17,8 +17,9 @@ export default function TimezonePicker({ timezone, onSelect }: Props) {
   searchRef.current = search
   timezoneRef.current = timezone
 
+  const normalise = (s: string) => s.toLowerCase().replace(/[ _]/g, ' ')
   const filtered = allTimezones.filter(tz =>
-    tz.toLowerCase().includes(search.toLowerCase())
+    normalise(tz).includes(normalise(search))
   )
 
   useEffect(() => {
@@ -56,13 +57,13 @@ export default function TimezonePicker({ timezone, onSelect }: Props) {
             if (e.key === 'Escape') { handleSelect(timezoneRef.current); inputRef.current?.blur() }
           }}
           placeholder="London, Sydney, Tokyo..."
-          style={{ fontSize: '1.5em', padding: '0.6em 0.75em', borderRadius: '0.75em', border: '0.35em solid black', width: '100%', backgroundColor: 'white', cursor: 'text', fontWeight: 'bold', boxShadow: '0.2em 0.2em 0 black', boxSizing: 'border-box' }}
+          style={{ fontSize: '1.5em', padding: '0.6em 0.75em', borderRadius: '0.75em', borderBottomRightRadius: 0, border: '0.35em solid #2C1A0E', width: '100%', backgroundColor: 'white', cursor: 'text', fontWeight: 'bold', boxShadow: '0.2em 0.2em 0 #2C1A0E', boxSizing: 'border-box' }}
         />
         {!open && <span style={{ position: 'absolute', right: '1em', top: '0.75em', fontSize: '0.9em', color: '#999', pointerEvents: 'none' }}>
           {formatOffset(getOffsetMinutes(timezone))}
         </span>}
         {open && filtered.length > 0 && (
-          <div style={{ position: 'absolute', bottom: 'calc(100% + 0.5em)', left: 0, right: 0, maxHeight: '15em', overflowY: 'auto', backgroundColor: 'white', border: '0.35em solid black', borderRadius: '0.75em', boxShadow: '0.2em 0.2em 0 black', zIndex: 100 }}>
+          <div style={{ position: 'absolute', bottom: 'calc(100% + 0.5em)', left: 0, right: 0, maxHeight: '15em', overflowY: 'auto', backgroundColor: 'white', border: '0.35em solid #2C1A0E', borderRadius: '0.75em', boxShadow: '0.2em 0.2em 0 #2C1A0E', zIndex: 100 }}>
             {filtered.map((tz, i) => (
               <div
                 key={tz}
