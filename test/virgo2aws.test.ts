@@ -3,6 +3,12 @@ import { Virgo } from '../src/virgo';
 import { Virgo2AWS } from '../src/virgo2aws';
 
 describe('Virgo2AWS', () => {
+  it('should have 17 default AWS regions', () => {
+    expect(Virgo2AWS.awsDefaultRegions).toHaveLength(17);
+    expect(Virgo2AWS.awsDefaultRegions).toContain('ap-northeast-3');
+    expect(Virgo2AWS.awsDefaultRegions).toContain('eu-north-1');
+  });
+
   it('should return the closest AWS region', () => {
     const result = Virgo2AWS.getClosestRegion();
     console.log(result)
@@ -13,7 +19,7 @@ describe('Virgo2AWS', () => {
   it('should return the closest AWS region to Asia/Tokyo', () => {
     const result = Virgo2AWS.getClosestRegion({ origin: { latitude: 36.01, longitude: 136.51 } });
     console.log(result)
-    expect(result.closestRegion).toBe('ap-northeast-1');
+    expect(result.closestRegion).toBe('ap-northeast-3');
   });
 
   it('should return the closest AWS region to Europe/London out of the specified regions', () => {
