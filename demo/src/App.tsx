@@ -3,8 +3,7 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Cards from './components/Cards';
 import TimezonePicker from './components/TimezonePicker';
-import { Virgo, Virgo2AWS } from '@mcteamster/virgo' // Production
-// import { Virgo, Virgo2AWS } from '../../src/index.ts' // Local Development
+import { Virgo, Virgo2AWS } from '@mcteamster/virgo'
 
 const styles = {
   body: {
