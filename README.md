@@ -3,7 +3,7 @@
 
 **A browser JS library for approximating user location (and distance) based on timezone**
 
-[![virgo](./docs/img/virgo.png)](https://virgo.tonz.io)
+📄 [Presentation (PDF)](https://pisces.tonz.io/2025/virgo/virgo.pdf) · 🌐 [Demo](https://virgo.tonz.io)
 
 ## Installation
 ```
