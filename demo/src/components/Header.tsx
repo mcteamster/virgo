@@ -28,7 +28,7 @@ export default function Header() {
         </code>
       </div>
       <div style={styles.paragraphCentered}>
-        Learn more on <a style={styles.link} href="https://github.com/mcteamster/virgo">GitHub</a>
+        Learn more on <a style={styles.link} href="https://github.com/tonzdev/virgo">GitHub</a>
       </div>
     </div>
   )

@@ -12,7 +12,7 @@
     "test": "jest",
     "deploy": "npm run build && npm publish --access public"
   },
-  "author": "mcteamster",
+  "author": "tonzdev",
   "license": "MIT",
   "repository": {
     "type": "git",
