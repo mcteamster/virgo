@@ -1,0 +1,117 @@
+{
+  "eastasia": {
+    "lat": 22.267,
+    "lng": 114.188,
+    "name": "East Asia"
+  },
+  "southeastasia": {
+    "lat": 1.283,
+    "lng": 103.833,
+    "name": "Southeast Asia"
+  },
+  "centralus": {
+    "lat": 41.5908,
+    "lng": -93.6208,
+    "name": "Central US"
+  },
+  "eastus": {
+    "lat": 37.3719,
+    "lng": -79.8164,
+    "name": "East US"
+  },
+  "eastus2": {
+    "lat": 36.6681,
+    "lng": -78.3889,
+    "name": "East US 2"
+  },
+  "westus": {
+    "lat": 37.783,
+    "lng": -122.417,
+    "name": "West US"
+  },
+  "northcentralus": {
+    "lat": 41.8819,
+    "lng": -87.6278,
+    "name": "North Central US"
+  },
+  "southcentralus": {
+    "lat": 29.4167,
+    "lng": -98.5,
+    "name": "South Central US"
+  },
+  "northeurope": {
+    "lat": 53.3478,
+    "lng": -6.2597,
+    "name": "North Europe"
+  },
+  "westeurope": {
+    "lat": 52.3667,
+    "lng": 4.9,
+    "name": "West Europe"
+  },
+  "japanwest": {
+    "lat": 34.6939,
+    "lng": 135.5022,
+    "name": "Japan West"
+  },
+  "japaneast": {
+    "lat": 35.68,
+    "lng": 139.77,
+    "name": "Japan East"
+  },
+  "brazilsouth": {
+    "lat": -23.55,
+    "lng": -46.633,
+    "name": "Brazil South"
+  },
+  "australiaeast": {
+    "lat": -33.86,
+    "lng": 151.2094,
+    "name": "Australia East"
+  },
+  "australiasoutheast": {
+    "lat": -37.8136,
+    "lng": 144.9631,
+    "name": "Australia Southeast"
+  },
+  "southindia": {
+    "lat": 12.9822,
+    "lng": 80.1636,
+    "name": "South India"
+  },
+  "centralindia": {
+    "lat": 18.5822,
+    "lng": 73.9197,
+    "name": "Central India"
+  },
+  "westindia": {
+    "lat": 19.088,
+    "lng": 72.868,
+    "name": "West India"
+  },
+  "canadacentral": {
+    "lat": 43.653,
+    "lng": -79.383,
+    "name": "Canada Central"
+  },
+  "canadaeast": {
+    "lat": 46.817,
+    "lng": -71.217,
+    "name": "Canada East"
+  },
+  "uksouth": {
+    "lat": 50.941,
+    "lng": -0.799,
+    "name": "UK South"
+  },
+  "ukwest": {
+    "lat": 53.427,
+    "lng": -3.084,
+    "name": "UK West"
+  },
+  "westcentralus": {
+    "lat": 40.890,
+    "lng": -110.234,
+    "name": "West Central US"
+  }
+}
